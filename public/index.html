@@ -1,0 +1,22 @@
+<!DOCTYPE >
+<html ng-app="HelloBlog">
+    <head>
+        <title>fux00</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="controller/controller.js"></script>
+    </head>
+    <body>
+        
+        <div ng-controller="AppController">
+            <h1>HELLOOOO</h1>
+            <div ng-repeat = "w in writingList">
+                <h3>{{w.title}}</h3>
+                <p>{{w.body}}</p>
+                <p>{{w.writer}}</p>               
+            </div>
+        </div>
+        
+    </body>
+</html>
