@@ -8,15 +8,23 @@
         <script src="controller/controller.js"></script>
     </head>
     <body>
-        
-        <div ng-controller="AppController">
-            <h1>HELLOOOO</h1>
-            <div ng-repeat = "w in writingList">
-                <h3>{{w.title}}</h3>
-                <p>{{w.body}}</p>
-                <p>{{w.writer}}</p>               
+        <div class="row">
+            <div class="col-2">
             </div>
+            <div ng-controller="AppController" class="col-8">
+                <h1>HELLOOOO</h1>
+                <div ng-repeat = "w in writingList">
+                    <h3>{{w.title}}</h3>
+                    <p>{{w.body}}</p>
+                    <p>{{w.writer}}</p>               
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+
         </div>
+        
+        
         
     </body>
 </html>
