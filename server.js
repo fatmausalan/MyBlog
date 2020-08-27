@@ -1,21 +1,24 @@
 var express = require('express');
 var app = express();
-var fu = "hello fuuuu";
+var mongojs =require('mongojs');
+var db = mongojs('writingList',['writingList']);
+var bodyParser = require('body-parser');
+
+
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
+
 app.get('/writingList', function(req, res){
-    console.log("GET Request!!!!")
-    writing1 = {
-        title: 'First Blog Post',
-        body: 'This is the first blog post. I try to do something. HELLO Hi',
-        writer: 'fux00'
-    }
-    writing2 = {
-        title: 'Second Blog Post',
-        body: 'This is the second blog post. I try to do something. HELLO Hi',
-        writer: 'fux01'
-    }
-    var writingList = [writing1, writing2];
-    res.json(writingList);
+    db.writingList.find(function(err,docs){
+        res.json(docs);
+    });
 });
+
+app.post('/writingList', function(req, res){
+    db.writingList.insert(req.body, function(err, doc){
+        res.json(doc);
+    });
+});
+
 app.listen(3000);
 console.log("server running");
