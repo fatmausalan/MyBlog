@@ -1,6 +1,18 @@
 angular.module('HelloBlog', [])
 .controller('AppController', function($scope, $http){
-    $scope.addButton = function(){
+   $scope.changeT = function(){
+       
+       if(document.getElementById("theme").href == "http://localhost:3000/css/dark.css"){
+            document.getElementById("theme").href="css/light.css"
+
+       }else{
+            document.getElementById("theme").href="css/dark.css"
+       }
+       
+   }        
+  
+
+    /*$scope.addButton = function(){
         console.log($scope.test);
     }
    var globalImg;
@@ -32,7 +44,9 @@ angular.module('HelloBlog', [])
             //console.log(response.data);
             refresh();
         });
-   }  
+   }*/
+   
+   
   
 })
 

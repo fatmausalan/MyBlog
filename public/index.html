@@ -1,27 +1,40 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html ng-app="HelloBlog">
-    <head>
-        <title>fux00</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-        <script src="controller/controller.js"></script>
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-2">
-            </div>
-            <div  ng-controller="AppController" class="col-8"> 
-                
-               
-                   <div ng-repeat = "w in writingList">
+<head>
+    <title>fux00</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="controller/controller.js"></script>
+    <script src="component/navbar.component.js"></script>
+
+
+    <link id="theme" rel="stylesheet" ng-href="css/dark.css">   
+
+</head>
+
+<body>
+
+    <div class="row"  ng-controller="AppController">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            
+            <my-navbar></my-navbar>
+
+
+           
+            <!--Show the all post-->
+            <!--<div ng-repeat = "w in writingList">
                     <h3>{{w.title}}</h3>
                     <img src={{w.imageSrc}} style="width: 100px ; height: 100px;">
-
                     <p>{{w.body}}</p>
                     <p>{{w.writer}}</p>
-                </div>
-                <div>
+                </div>-->
+            <!--add to new post-->
+            <!--<div>
                     <input class="form-control" ng-model="newW.title">
                     <input class="form-control" ng-model="newW.body">
                     <input class="form-control" ng-model="newW.writer">
@@ -29,14 +42,19 @@
                     <img id="blah" src="#" alt="your image" style="width: 100px ; height: 100px;">
                     <button class="btn btn-primary" ng-click="addWriting()">ADD</button>
                     
-                </div>
-            </div>
-            <div class="col-2">
-            </div>
-
+                </div>-->
         </div>
-        
-        
-        
-    </body>
+        <div class="col-2">
+            <div class="custom-control custom-switch"  style="margin-top: 30px;"">
+                <input type="checkbox" class="custom-control-input" id="customSwitch">
+                <label class="custom-control-label" for="customSwitch" ng-click="changeT()"></label>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
 </html>
